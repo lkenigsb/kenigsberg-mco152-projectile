@@ -1,4 +1,4 @@
-package Kenigsberg.projectile;
+package kenigsberg.projectile;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,8 @@ class ProjectileTest
     public void getX()
     {
         // given
-        Projectile projectile = new Projectile(39, 77,6);
+        Projectile projectile = new Projectile(39, 77);
+        projectile.setTime(6);
 
         // when
         double x = projectile.getX();
@@ -23,7 +24,8 @@ class ProjectileTest
     public void getY()
     {
         // given
-        Projectile projectile = new Projectile(39, 77,6);
+        Projectile projectile = new Projectile(39, 77);
+        projectile.setTime(6);
 
         // when
         double y = projectile.getY();
@@ -36,13 +38,13 @@ class ProjectileTest
     public void incTime()
     {
         // given
-        Projectile projectile = new Projectile(39, 77, 6);
+        Projectile projectile = new Projectile(39, 77);
 
         // when
-        projectile.incTime(4);
+        projectile.incTime(6);
 
         // then
-        assertEquals(10, projectile.getTime());
+        assertEquals(6, projectile.getTime());
     }
 
 }

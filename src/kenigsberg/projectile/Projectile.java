@@ -1,4 +1,4 @@
-package Kenigsberg.projectile;
+package kenigsberg.projectile;
 
 public class Projectile
 {
@@ -7,11 +7,11 @@ public class Projectile
     private final double velocity;
     private int time;
 
-    public Projectile(double angle, double velocity, int time)
+    public Projectile(double angle, double velocity)
     {
         this.angle = angle;
         this.velocity = velocity;
-        this.time = time;
+        this.time = 0;
     }
 
 
@@ -43,7 +43,7 @@ public class Projectile
 
     public double getY()
     {
-        return Math.sin(Math.toRadians(angle)) * velocity * time - .5 * 9.8 * (Math.pow(time, 2));
+        return Math.sin(Math.toRadians(angle)) * velocity * time - .5 * 9.8 * time * time;
     }
 
     public void incTime(double delta)
